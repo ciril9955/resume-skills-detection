@@ -11,7 +11,8 @@ logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
 # Load the spaCy model
-nlp = spacy.load("en_core_web_sm")
+nlp = spacy.load("en_core_web_sm", disable=["parser", "ner"])
+
 
 # Function to extract skills from text using regular expressions
 def extract_skills(text, predefined_skills):
